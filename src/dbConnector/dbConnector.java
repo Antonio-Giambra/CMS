@@ -42,7 +42,11 @@ public class dbConnector {
     
     public void getCourseReport(String outputType){
         try{
-            
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+            Statement stmt = conn.createStatement();
+            stmt.execute("USE cms;");
+            System.out.println("Table sucessfully created");
+            conn.close();
         }catch(Exception e){
             e.printStackTrace();
         }

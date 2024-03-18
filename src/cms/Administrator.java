@@ -1,7 +1,9 @@
 
 package cms;
 
-public class Administrator {
+import dbConnector.dbConnector;
+
+public class Administrator extends dbConnector{
     private String name;
     private String username;
     private String password;
@@ -53,15 +55,5 @@ public class Administrator {
         } else {
             System.out.println("Sorry, your new password must be longer than 8 letters");
         }
-    }
-    
-    public void addUser(){
-        
-    }
-    public void modifyUser(){
-        
-    }
-    public void deleteUser(){
-        
     }
 }

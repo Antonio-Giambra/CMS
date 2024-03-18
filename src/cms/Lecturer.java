@@ -1,7 +1,9 @@
 
 package cms;
 
-public class Lecturer {
+import dbConnector.dbConnector;
+
+public class Lecturer extends dbConnector{
     private String name;
     private String username;
     private String password;
@@ -16,6 +18,10 @@ public class Lecturer {
         return username;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -24,6 +30,11 @@ public class Lecturer {
         this.username = username;
         this.password = password;
         System.out.println("Your Lecturer Account has been successfully created");
+    }
+
+    public void setName(String name) {
+        this.name = name;
+        System.out.println("Lecturer name has been successfully changed");
     }
 
     public void setUsername(String username) {
@@ -41,7 +52,8 @@ public class Lecturer {
     }
     
     //Getting all reports
-    public void getReport(int reportType){
+    public void getReport(){
         //Will get a report for themselves
+        System.out.println("Lecturer Report has been generated");
     }
 }
