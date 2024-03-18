@@ -1,0 +1,93 @@
+Module: Introduction to Computer Science, Program: Introduction to programming concepts and basic algorithms., Students enrolled: 3, Lecturer: Eric Carter, Room: Room 101
+Module: Data Structures and Algorithms, Program: Advanced data structures and algorithm design techniques., Students enrolled: 3, Lecturer: Katie Fowler, Room: Online
+Module: Database Management Systems, Program: Design, implementation, and management of database systems., Students enrolled: 2, Lecturer: Brady Nichols, Room: Online
+Module: Artificial Intelligence, Program: Fundamental concepts and techniques in artificial intelligence., Students enrolled: 2, Lecturer: Austin Richardson, Room: Room 104
+Module: Web Development, Program: Frontend and backend web development technologies., Students enrolled: 3, Lecturer: Derek Wells, Room: Room 105
+Module: Software Engineering, Program: Software development methodologies and best practices., Students enrolled: 3, Lecturer: David Brown, Room: Room 106
+Module: Cybersecurity Fundamentals, Program: Basic principles and practices in cybersecurity., Students enrolled: 2, Lecturer: Tristan Schmidt, Room: Room 108
+Module: Network Administration, Program: Fundamental concepts and tools for network administration., Students enrolled: 1, Lecturer: Evan Howell, Room: Room 109
+Module: Mobile App Development, Program: Development of mobile applications for various platforms., Students enrolled: 2, Lecturer: Lauren Perez, Room: Online
+Module: Data Mining, Program: Methods and tools for discovering patterns in large datasets., Students enrolled: 3, Lecturer: Alex Gibson, Room: Room 112
+Module: Software Testing and Quality Assurance, Program: Testing methodologies and quality assurance processes., Students enrolled: 3, Lecturer: Shawn Murray, Room: Room 113
+Module: Operating Systems, Program: Design, implementation, and management of operating systems., Students enrolled: 4, Lecturer: Jocelyn Higgins, Room: Room 114
+Module: Cloud Computing, Program: Concepts and technologies for cloud-based applications and services., Students enrolled: 7, Lecturer: Timothy James, Room: Online
+Module: Digital Marketing, Program: Strategies and techniques for marketing in the digital age., Students enrolled: 2, Lecturer: Matthew Thomas, Room: Room 116
+Module: Human-Computer Interaction, Program: Design principles and usability testing in HCI., Students enrolled: 2, Lecturer: Melanie Rose, Room: Room 117
+Module: Computer Networks, Program: Fundamental concepts and protocols in computer networking., Students enrolled: 1, Lecturer: Kevin Sanders, Room: Room 118
+Module: Information Security Management, Program: Management strategies for information security in organizations., Students enrolled: 3, Lecturer: Roman Gonzalez, Room: Room 119
+Module: Software Architecture, Program: Principles and patterns for designing software architectures., Students enrolled: 4, Lecturer: Madeline Bowen, Room: Room 120
+Module: Internet of Things, Program: Concepts and applications of IoT technologies., Students enrolled: 3, Lecturer: Keith Gonzales, Room: Room 121
+Module: Data Visualization, Program: Visualization techniques for presenting data and information., Students enrolled: 3, Lecturer: Gage Garza, Room: Room 122
+Module: Embedded Systems, Program: Design and programming of embedded systems., Students enrolled: 5, Lecturer: Breanna Bates, Room: Room 123
+Module: Computer Ethics, Program: Ethical issues and dilemmas in computing and technology., Students enrolled: 3, Lecturer: Steven Hill, Room: Room 124
+Module: Game Development, Program: Design and development of video games., Students enrolled: 1, Lecturer: Natalie Morris, Room: Room 125
+Module: Big Data Analytics, Program: Methods and tools for analyzing large and complex datasets., Students enrolled: 3, Lecturer: Camila Bryant, Room: Room 126
+Module: Computer Vision, Program: Techniques for enabling computers to interpret and understand visual information., Students enrolled: 5, Lecturer: Casey Bishop, Room: Online
+Module: IT Project Management, Program: Principles and practices for managing IT projects., Students enrolled: 2, Lecturer: Ethan Diaz, Room: Room 128
+Module: Blockchain Technology, Program: Concepts and applications of blockchain technology., Students enrolled: 4, Lecturer: Vanessa Gardner, Room: Online
+Module: Computer Forensics, Program: Investigation and analysis of digital evidence for legal purposes., Students enrolled: 5, Lecturer: Aaron Harrison, Room: Room 130
+Module: Ethical Hacking, Program: Methods and techniques for testing and securing computer systems., Students enrolled: 2, Lecturer: James King, Room: Room 131
+Module: Digital Forensics, Program: Forensic analysis of digital devices and data., Students enrolled: 2, Lecturer: Caitlin Parks, Room: Room 132
+Module: Computer Animation, Program: Techniques for creating animated graphics and visual effects., Students enrolled: 6, Lecturer: Colton Freeman, Room: Room 133
+Module: Software Development Lifecycle, Program: Phases and processes involved in software development., Students enrolled: 6, Lecturer: Thomas Bennett, Room: Room 134
+Module: Quantum Computing, Program: Principles and applications of quantum computing., Students enrolled: 2, Lecturer: Tanner Reid, Room: Room 135
+Module: Information Retrieval, Program: Techniques for searching and retrieving information from large datasets., Students enrolled: 4, Lecturer: Corey Lawrence, Room: Room 136
+Module: Computer Music, Program: Creation and manipulation of music using computers and software., Students enrolled: 2, Lecturer: Nolan Frazier, Room: Room 137
+Module: Programming Languages, Program: Syntax, semantics, and usage of programming languages., Students enrolled: 3, Lecturer: Autumn Morrison, Room: Room 139
+Module: Cyber-Physical Systems, Program: Integration of physical processes with computing and communication., Students enrolled: 3, Lecturer: Ryan Gonzalez, Room: Online
+Module: Data Science, Program: Methods and techniques for analyzing and interpreting complex datasets., Students enrolled: 2, Lecturer: Braden Ray, Room: Room 141
+Module: Robotics, Program: Design, construction, and operation of robots., Students enrolled: 3, Lecturer: Erin Snyder, Room: Room 142
+Module: Computer-Aided Design, Program: Use of computer software to aid in the design and drafting process., Students enrolled: 1, Lecturer: Lindsay Hardy, Room: Room 143
+Module: Information Theory, Program: Mathematical study of information and communication., Students enrolled: 1, Lecturer: Tyler Cook, Room: Room 144
+Module: Social Media Analytics, Program: Analysis of social media data for insights and trends., Students enrolled: 5, Lecturer: Ryder Ray, Room: Room 145
+Module: Compiler Design, Program: Principles and techniques for designing compilers., Students enrolled: 2, Lecturer: Jordan Gomez, Room: Room 146
+Module: Digital Signal Processing, Program: Analysis and manipulation of digital signals., Students enrolled: 3, Lecturer: Preston Lambert, Room: Room 147
+Module: Network Security, Program: Methods and technologies for securing computer networks., Students enrolled: 4, Lecturer: Kyle Ward, Room: Online
+Module: Software Maintenance, Program: Processes and techniques for maintaining and updating software., Students enrolled: 6, Lecturer: Grant Hubbard, Room: Room 149
+Module: Computer Vision Algorithms, Program: Algorithms for computer vision tasks such as image recognition and object detection., Students enrolled: 5, Lecturer: William Wilson, Room: Room 150
+Module: Introduction to Python Programming, Program: Basic concepts and syntax of Python programming language., Students enrolled: 3, Lecturer: Erik Bowman, Room: Room 101
+Module: Java Programming, Program: Introduction to Java programming language and object-oriented programming concepts., Students enrolled: 4, Lecturer: Lisa Peterson, Room: Room 102
+Module: Web Design and Development, Program: Fundamentals of web design and development using HTML, CSS, and JavaScript., Students enrolled: 6, Lecturer: Dominic Johnston, Room: Room 103
+Module: Introduction to Data Science, Program: Fundamental concepts and techniques in data science., Students enrolled: 6, Lecturer: Brady Nichols, Room: Online
+Module: Computer Networking, Program: Fundamentals of computer networking and network protocols., Students enrolled: 8, Lecturer: Jamie Burton, Room: Room 106
+Module: Introduction to Cybersecurity, Program: Basic principles and practices in cybersecurity., Students enrolled: 3, Lecturer: Lauren Perez, Room: Room 107
+Module: Object-Oriented Programming, Program: Fundamentals of object-oriented programming using Java., Students enrolled: 4, Lecturer: Gage Garza, Room: Room 108
+Module: Software Engineering Principles, Program: Principles and methodologies of software engineering., Students enrolled: 3, Lecturer: Kevin Sanders, Room: Room 109
+Module: Algorithms and Data Structures, Program: Fundamental algorithms and data structures for problem-solving., Students enrolled: 2, Lecturer: Oscar Greene, Room: Online
+Module: Introduction to Machine Learning, Program: Basic concepts and algorithms in machine learning., Students enrolled: 1, Lecturer: Andrew Long, Room: Room 111
+Module: Cloud Computing Fundamentals, Program: Basic concepts and technologies of cloud computing., Students enrolled: 4, Lecturer: Alaina Newton, Room: Room 112
+Module: Digital Marketing Strategies, Program: Strategies for marketing products and services in the digital age., Students enrolled: 4, Lecturer: Danielle Jenkins, Room: Room 113
+Module: Human-Computer Interaction Design, Program: Design principles and methods for human-computer interaction., Students enrolled: 4, Lecturer: Corey Lawrence, Room: Online
+Module: Software Development Methodologies, Program: Agile and traditional software development methodologies., Students enrolled: 7, Lecturer: Austin Richardson, Room: Online
+Module: Introduction to Internet of Things, Program: Concepts and applications of Internet of Things (IoT)., Students enrolled: 5, Lecturer: Adriana Howell, Room: Room 116
+Module: Data Visualization Techniques, Program: Techniques for visualizing and analyzing data., Students enrolled: 1, Lecturer: Phillip Hudson, Room: Room 117
+Module: Embedded Systems Design, Program: Design and development of embedded systems., Students enrolled: 3, Lecturer: Robert Russell, Room: Room 118
+Module: Computer Ethics and Privacy, Program: Ethical and privacy issues in computing and technology., Students enrolled: 3, Lecturer: Braxton Luna, Room: Online
+Module: Game Development Fundamentals, Program: Fundamental concepts and techniques in game development., Students enrolled: 8, Lecturer: James King, Room: Room 120
+Module: Big Data Analytics Techniques, Program: Techniques for analyzing large-scale datasets., Students enrolled: 1, Lecturer: Jamie Burton, Room: Room 121
+Module: Computer Vision Applications, Program: Applications of computer vision in various domains., Students enrolled: 5, Lecturer: Greg Ortega, Room: Online
+Module: IT Project Management Practices, Program: Practices and methodologies for managing IT projects., Students enrolled: 6, Lecturer: Jeffrey Lloyd, Room: Room 123
+Module: Blockchain Technology Applications, Program: Applications of blockchain technology beyond cryptocurrencies., Students enrolled: 2, Lecturer: Tyler Cook, Room: Online
+Module: Computer Forensics Investigation, Program: Investigation and analysis of digital evidence for legal purposes., Students enrolled: 5, Lecturer: Miranda Fletcher, Room: Room 125
+Module: Ethical Hacking Techniques, Program: Techniques for identifying and addressing security vulnerabilities., Students enrolled: 4, Lecturer: Logan Knight, Room: Room 126
+Module: Digital Forensics Analysis, Program: Analysis of digital evidence for forensic purposes., Students enrolled: 3, Lecturer: Cassandra Harrison, Room: Room 127
+Module: Computer Animation Principles, Program: Principles and techniques of computer animation., Students enrolled: 3, Lecturer: Steven Hill, Room: Room 128
+Module: Software Development Lifecycle Models, Program: Different models and methodologies in software development lifecycle., Students enrolled: 2, Lecturer: Braxton Luna, Room: Online
+Module: Quantum Computing Concepts, Program: Concepts and principles of quantum computing., Students enrolled: 3, Lecturer: Greg Ortega, Room: Room 130
+Module: Information Retrieval Methods, Program: Methods for retrieving information from large datasets., Students enrolled: 1, Lecturer: Keith Gonzales, Room: Room 131
+Module: Computer Music Composition, Program: Composition and production of music using computer technology., Students enrolled: 2, Lecturer: Jeffrey Lloyd, Room: Room 132
+Module: Geographic Information Systems Applications, Program: Applications of GIS technology in various fields., Students enrolled: 2, Lecturer: Kayla Flores, Room: Room 133
+Module: Programming Languages Concepts, Program: Concepts and features of programming languages., Students enrolled: 1, Lecturer: Dustin Hayes, Room: Room 134
+Module: Cyber-Physical Systems Design, Program: Design and implementation of cyber-physical systems., Students enrolled: 4, Lecturer: Julianna French, Room: Room 135
+Module: Data Science Techniques, Program: Techniques and tools for data analysis and interpretation., Students enrolled: 4, Lecturer: Ashley Lopez, Room: Room 136
+Module: Robotics Engineering, Program: Engineering principles and practices in robotics., Students enrolled: 1, Lecturer: Braden Ray, Room: Room 137
+Module: Computer-Aided Design Applications, Program: Applications of CAD software in design and engineering., Students enrolled: 2, Lecturer: Lila Bishop, Room: Room 138
+Module: Information Theory Fundamentals, Program: Fundamental concepts in information theory., Students enrolled: 1, Lecturer: Alyssa Ferguson, Room: Online
+Module: Social Media Analytics Methods, Program: Methods for analyzing and interpreting social media data., Students enrolled: 1, Lecturer: Shelby Hess, Room: Online
+Module: Compiler Design Principles, Program: Principles and techniques of compiler design., Students enrolled: 2, Lecturer: Monica Rice, Room: Room 141
+Module: Digital Signal Processing Techniques, Program: Techniques for processing digital signals., Students enrolled: 3, Lecturer: Tanner Reid, Room: Online
+Module: Network Security Technologies, Program: Technologies and tools for network security., Students enrolled: 4, Lecturer: Oscar Greene, Room: Room 143
+Module: Software Maintenance Practices, Program: Practices and strategies for software maintenance., Students enrolled: 3, Lecturer: Phillip Hudson, Room: Room 144
+Module: Computer Vision Algorithms Implementation, Program: Implementation of computer vision algorithms., Students enrolled: 2, Lecturer: Grace Wood, Room: Room 145
+Module: Database Design and Management, Program: Design and management of relational databases using SQL., Students enrolled: 4, Lecturer: Phillip Hudson, Room: Online
+Module: Introduction to Data Science, Program: Fundamental concepts and techniques in data science., Students enrolled: 4, Lecturer: Brady Nichols, Room: Room 105

@@ -102,7 +102,7 @@ public class adminMenu {
                 //Creation of two more trigger boolean variables in order to break each layout while loop below.
                 boolean triggerLayout2 = false;
                 boolean triggerLayout3 = false;
-                System.out.println("Welcome to Content Management System \n\n Press 1 - to connect Admin Account \n Press 2 - to connect Office Account \n Press 3 - to connect Lecturer Account\n Press 4 - to exit the system");
+                System.out.println("Welcome to Content Management System \n\n Press 1 - to connect an Admin Account \n Press 2 - to connect an Office Account \n Press 3 - to connect a Lecturer Account\n Press 4 - to exit the system");
                 //variable userConnection in order to store data provided by user
                 String userConnection = sc.nextLine();
                 
@@ -319,15 +319,57 @@ public class adminMenu {
                                     switch(optionSelected){
                                         case "1":
                                             //Calling our DB to generate a course report
-                                            officeAccount.getReport(1);
+                                            System.out.println();
+                                            System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
+                                            switch(sc.nextLine()){
+                                                case "1":
+                                                    officeAccount.getReport(1,"txt");
+                                                    break;
+                                                case "2":
+                                                    officeAccount.getReport(1,"csv");
+                                                    break;
+                                                case "3":
+                                                    officeAccount.getReport(1,"console");
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
                                             break;
                                         case "2":
                                             //Calling our DB to generate a student report
-                                            officeAccount.getReport(2);
+                                            System.out.println();
+                                            System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
+                                            switch(sc.nextLine()){
+                                                case "1":
+                                                    officeAccount.getReport(2,"txt");
+                                                    break;
+                                                case "2":
+                                                    officeAccount.getReport(2,"csv");
+                                                    break;
+                                                case "3":
+                                                    officeAccount.getReport(2,"console");
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
                                             break;
                                         case "3":
                                             //Calling our DB to generate a lecturer report
-                                            officeAccount.getReport(3);
+                                            System.out.println();
+                                            System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
+                                            switch(sc.nextLine()){
+                                                case "1":
+                                                    officeAccount.getReport(3,"txt");
+                                                    break;
+                                                case "2":
+                                                    officeAccount.getReport(3,"csv");
+                                                    break;
+                                                case "3":
+                                                    officeAccount.getReport(3,"console");
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
                                             break;
                                         case "4":
                                             //Changing our username
