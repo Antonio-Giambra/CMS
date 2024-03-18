@@ -11,10 +11,19 @@ public class Lecturer {
         this.username = "lecturer";
         this.password = "java";
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
     public Lecturer(String name, String username, String password) {
         this.name = name;
         this.username = username;
         this.password = password;
+        System.out.println("Your Lecturer Account has been successfully created");
     }
 
     public void setUsername(String username) {

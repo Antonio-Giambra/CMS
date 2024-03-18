@@ -16,6 +16,7 @@ public class Office {
         this.name = name;
         this.username = username;
         this.password = password;
+        System.out.println("Your Office Account has been successfully created");
     }
 
     public void setUsername(String username) {
