@@ -1,6 +1,8 @@
 
 package Users;
 
+import dbConnector.dbConnector;
+
 public class Lecturer {
     private String name;
     private String username;
@@ -50,8 +52,11 @@ public class Lecturer {
     }
     
     //Getting all reports
-    public void getReport(){
+    public void getReport( String reportFormat){
         //Will get a report for themselves
-        System.out.println("Lecturer Report has been generated");
+            dbConnector db3 = new dbConnector();
+            System.out.println("Course Report will be generated...");
+            db3.getLecturerReport(reportFormat);
+                
     }
 }

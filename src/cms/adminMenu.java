@@ -429,7 +429,21 @@ public class adminMenu {
                                     switch(optionSelected){
                                         case "1":
                                             //Calling our DB to generate a course report
-                                            lecturerTransactor.getReport();
+                                            System.out.println();
+                                            System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
+                                            switch(sc.nextLine()){
+                                                case "1":
+                                                    lecturerTransactor.getReport("txt");
+                                                    break;
+                                                case "2":
+                                                    lecturerTransactor.getReport("csv");
+                                                    break;
+                                                case "3":
+                                                    lecturerTransactor.getReport("console");
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
                                             break;
                                         case "2":
                                             //Changing our username
