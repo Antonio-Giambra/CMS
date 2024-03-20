@@ -1,9 +1,7 @@
 
-package cms;
+package Users;
 
-import dbConnector.dbConnector;
-
-public class Lecturer extends dbConnector{
+public class Lecturer {
     private String name;
     private String username;
     private String password;

@@ -1,9 +1,10 @@
 
-package cms;
+package Users;
 
 import dbConnector.dbConnector;
 
 public class Administrator extends dbConnector{
+
     private String name;
     private String username;
     private String password;
@@ -57,3 +58,4 @@ public class Administrator extends dbConnector{
         }
     }
 }
+

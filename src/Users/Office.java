@@ -1,9 +1,8 @@
-
-package cms;
+package Users;
 
 import dbConnector.dbConnector;
 
-public class Office extends dbConnector{
+public class Office {
     private String name;
     private String username;
     private String password;
