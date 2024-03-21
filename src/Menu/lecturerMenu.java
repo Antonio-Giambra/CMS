@@ -39,35 +39,6 @@ public class lecturerMenu extends mainMenu {
         return null;
     }
 
-    public void searchLecturer(String username, String data, int operation) {
-        //Iteratin our ArrayList
-        Iterator<Lecturer> itr = lecturers.iterator();
-
-        while (itr.hasNext()) {
-            Lecturer lecturer = itr.next();
-            //if lecturer username and password match with entry data it return true.
-            if (lecturer.getUsername().equals(username)) {
-                switch (operation) {
-                    case 1:
-                        lecturer.setName(data);
-                        break;
-                    case 2:
-                        lecturer.setUsername(data);
-                        break;
-                    case 3:
-                        lecturer.setPassword(data);
-                        break;
-                    case 4:
-                        System.out.println("Lecturer " + lecturer.getName() + " has been deleted");
-                        itr.remove();
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-    }
-
     public void start() {
         //Creating triggers in order to break the while loops below
         boolean mainWhileTrigger = false;

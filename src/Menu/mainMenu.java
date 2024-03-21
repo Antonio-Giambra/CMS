@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Menu;
 
 import Users.Administrator;
@@ -20,10 +17,11 @@ public class mainMenu {
     public Office officeAccount;     
     public ArrayList<Lecturer> lecturers = new ArrayList<>();
     
-    public void start(){
+    public void startMenu(){
         
         adminMenu adminmenu = new adminMenu();
         officeMenu office = new officeMenu();
+        lecturerMenu lecturer = new lecturerMenu();
         
         boolean trigger = false;
         while(trigger == false) {
@@ -37,6 +35,12 @@ public class mainMenu {
                     office.start();
                     break;
                 case "3":
+                    lecturer.start();
+                    break;
+                case "4":
+                    trigger = true;
+                    System.out.println();
+                    System.out.println("Thank you for using this system");
                     break;
                 default:
                     break;
@@ -51,4 +55,5 @@ public class mainMenu {
         userSelection = sc.nextLine();
         return userSelection;
     }
+ 
 }
