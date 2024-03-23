@@ -5,36 +5,53 @@ import java.util.Iterator;
 
 /**
  *
- * @author anton
+ * @author Antonio
  */
 public class lecturerMenu extends mainMenu {
 
+    //lecturerValidator Method to check if lecturer account concur with lecturer account inside the ArrayList.
+    //Method return True or False
+    //Param lecturer username, lecturer password
     public boolean lecturerValidator(String username, String password) {
-        //Iteratin our ArrayList
-        Iterator<Lecturer> itr = lecturers.iterator();
+        try {
+            //Iteratin our ArrayList
+            Iterator<Lecturer> itr = lecturers.iterator();
 
-        while (itr.hasNext()) {
-            Lecturer lecturer = itr.next();
-            //if lecturer username and password match with entry data it return true.
-            if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
-                return true;
+            while (itr.hasNext()) {
+                Lecturer lecturer = itr.next();
+                //if lecturer username and password match with entry data it return true.
+                if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
+                    return true;
+                }
+
             }
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return false;
     }
 
+    //lecturerInfo Method to check if the lecturer account matches the lecturer account within the ArrayList to get the properties of the lecturer user.
+    //Method return the lecturer selected or null type
+    //Param lecturer username, lecturer password
     public Lecturer lecturerInfo(String username, String password) {
-        //Iteratin our ArrayList
-        Iterator<Lecturer> itr = lecturers.iterator();
+        try {
+            //Iteratin our ArrayList
+            Iterator<Lecturer> itr = lecturers.iterator();
 
-        while (itr.hasNext()) {
-            Lecturer lecturer = itr.next();
-            //if lecturer username and password match with entry data it return true.
-            if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
-                return lecturer;
+            while (itr.hasNext()) {
+                Lecturer lecturer = itr.next();
+                //if lecturer username and password match with entry data it return true.
+                if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
+                    return lecturer;
+                } else {
+                    System.out.println();
+                    System.out.println("Sorry, lecturer invalid or does not exist.");
+                }
+
             }
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return null;
     }
@@ -43,6 +60,8 @@ public class lecturerMenu extends mainMenu {
         //Creating triggers in order to break the while loops below
         boolean mainWhileTrigger = false;
         boolean secondWhileTrigger = false;
+
+        //Starting lecturer's menu
         while (mainWhileTrigger == false) {
             System.out.println();
             System.out.println("Please introduce your lecturer username with capital letter if needed.");
@@ -54,7 +73,7 @@ public class lecturerMenu extends mainMenu {
             String password = sc.nextLine();
             //Comparing data introduced by user in order to log in office account
             if (lecturerValidator(username, password)) {
-                //Lecturer instance has been created in order to work with his/her data and processes
+                //Lecturer lecturerTransactor instance has been created in order to work with his/her data and processes
                 Lecturer lecturerTransactor = lecturerInfo(username, password);
                 while (secondWhileTrigger == false) {
                     System.out.println();
@@ -63,17 +82,20 @@ public class lecturerMenu extends mainMenu {
                     String optionSelected = sc.nextLine();
                     switch (optionSelected) {
                         case "1":
-                            //Calling our DB to generate a course report
+                            //Calling lecturer getReport method in order to obtain the report
                             System.out.println();
                             System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
                             switch (sc.nextLine()) {
                                 case "1":
+                                    //Look for obtain report in txt format
                                     lecturerTransactor.getReport("txt");
                                     break;
                                 case "2":
+                                    //Look for obtain report in csv format
                                     lecturerTransactor.getReport("csv");
                                     break;
                                 case "3":
+                                    //Look for obtain report in console format
                                     lecturerTransactor.getReport("console");
                                     break;
                                 default:
@@ -81,14 +103,14 @@ public class lecturerMenu extends mainMenu {
                             }
                             break;
                         case "2":
-                            //Changing our username
+                            //Changing lecturer username
                             System.out.println();
                             System.out.println("Please introduce your new username");
                             String lecturerNewUsername = sc.nextLine();
                             lecturerTransactor.setUsername(lecturerNewUsername);
                             break;
                         case "3":
-                            //Changing our password
+                            //Changing lecturer password
                             System.out.println();
                             System.out.println("Please introduce your new password");
                             String lecturerNewPassword = sc.nextLine();

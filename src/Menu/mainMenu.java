@@ -20,7 +20,8 @@ public class mainMenu {
     public ArrayList<Lecturer> lecturers = new ArrayList<>();
     //Creating the scanner for the whole menu an its sub-classes
     public Scanner sc = new Scanner(System.in);
-
+    
+    //Starting Menu
     public void startMenu() {
 
         //Creating instances of the three diferent menus

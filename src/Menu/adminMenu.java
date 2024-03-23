@@ -6,42 +6,13 @@ import java.util.Iterator;
 
 public class adminMenu extends mainMenu {
     
-    public void modifyLecturer(String username, String data, int operation) {
-        //Iteratin our ArrayList
-        Iterator<Lecturer> itr = lecturers.iterator();
-
-        while (itr.hasNext()) {
-            Lecturer lecturer = itr.next();
-            //if lecturer username and password match with entry data it return true.
-            if (lecturer.getUsername().equals(username)) {
-                switch (operation) {
-                    case 1:
-                        lecturer.setName(data);
-                        break;
-                    case 2:
-                        lecturer.setUsername(data);
-                        break;
-                    case 3:
-                        lecturer.setPassword(data);
-                        break;
-                    case 4:
-                        System.out.println("Lecturer " + lecturer.getName() + " has been deleted");
-                        itr.remove();
-                        break;
-                    default:
-                        break;
-                }
-            }else{
-                System.out.println();
-                System.out.println("Sorry, username invalid or does not exist");
-            }
-        }
-    }
-
+    //Starting Admin Menu
     public void start() {
         //Creating triggers in order to break the while loops below
         boolean mainWhileTrigger = false;
         boolean secondWhileTrigger = false;
+
+        //Starting adminMenu
         while (mainWhileTrigger == false) {
             System.out.println();
             System.out.println("Please introduce your admin username with capital letter if needed.");
@@ -61,146 +32,30 @@ public class adminMenu extends mainMenu {
                     String optionSelected = sc.nextLine();
                     switch (optionSelected) {
                         case "1":
+                            //ACCOUNT CREATION SECTION
                             System.out.println();
                             System.out.println(" Press 1 - to add an office user \n Press 2 - to add lecturer user \n Press any other button to cancel operation");
                             String dataEntry = sc.nextLine();
-                            switch(dataEntry){
-                                case "1": 
-                                    if (officeAccount == null) {
-                                        System.out.println();
-                                        System.out.println("Please, introduce an username for the office account, must be longer than 4 letters");
-                                        String officeUsername = sc.nextLine();
-                                        System.out.println("Please, introduce a password for the office account, must be longer than 8 characteres");
-                                        String officePassword = sc.nextLine();
-                                        officeAccount = new Office("office", officeUsername, officePassword);
-                                    } else {
-                                        System.out.println("Sorry, there is an Office Account already created");
-                                    }
-                                    break;
-                                case "2": 
-                                    System.out.println();
-                                    System.out.println("Please, introduce the name of the lecturer, must be longer than 4 letters");
-                                    String lecturerName = sc.nextLine();
-                                    System.out.println();
-                                    System.out.println("Please, introduce an username for the lecturer account, must be longer than 4 letters");
-                                    String lecturerUsername = sc.nextLine();
-                                    System.out.println("Please, introduce a password for the lecturer account, must be longer than 8 characteres");
-                                    String lecturerPassword = sc.nextLine();
-                                    Lecturer lecturer = new Lecturer(lecturerName, lecturerUsername, lecturerPassword);
-                                    lecturers.add(lecturer);
-                                    break;
-                                default:
-                                    System.out.println();
-                                    System.out.println("Cancelling Operation!!");
-                                    break;
-                                }
+                            //Calling createAccount Method
+                            createAccount(dataEntry);
                             break;
                         //-------------------------------------------Modification section------------------------------------------------------//
                         case "2":
+                            //MODIFICATION SECTION
                             System.out.println();
                             System.out.println("Press 1 - to modify an office user \n Press 2 - to modify lecturer user \n Press any button to cancel operation");
-                            String userModify = sc.nextLine();
-                            //----------------------------Modifying office user--------------------------------//
-                            if (userModify.equals("1")) {
-                                if (officeAccount != null) {
-                                    System.out.println();
-                                    System.out.println("Press 1 - to modify an office name \n Press 2 - to modify an office username \n Press 3 - to modify office password \n Press any other button to cancelling operation");
-                                    switch (sc.nextLine()) {
-                                        case "1":
-                                            System.out.println();
-                                            System.out.println("Please, introduce a name for the office account, must be longer than 4 letters");
-                                            String officeName = sc.nextLine();
-                                            officeAccount.setName(officeName);
-                                            break;
-                                        case "2":
-                                            System.out.println();
-                                            System.out.println("Please, introduce an username for the office account, must be longer than 4 letters");
-                                            String officeUsername = sc.nextLine();
-                                            officeAccount.setUsername(officeUsername);
-                                            break;
-                                        case "3":
-                                            System.out.println();
-                                            System.out.println("Please, introduce a password for the office account, must be longer than 8 characteres");
-                                            String officePassword = sc.nextLine();
-                                            officeAccount.setPassword(officePassword);
-                                            break;
-                                        default:
-                                            System.out.println("Cancelling Operation!!");
-                                            break;
-                                    }
-                                } else {
-                                    System.out.println("Sorry, there is not an Office Account already created");
-                                }
-                                //------------------------------modifying lecturer user-----------------------------------//   
-                            } else if (userModify.equals("2")) {
-                                if (!(lecturers.isEmpty())) {
-                                    System.out.println();
-                                    System.out.println("Press 1 - to modify an lecturer name \n Press 2 - to modify an lecturer username \n Press 3 - to modify lecturer password \n Press any other button to cancelling operation");
-                                    String lecturerUsername;
-                                    switch (sc.nextLine()) {
-                                        case "1":
-                                            System.out.println();
-                                            System.out.println("Please, introduce lecturer username");
-                                            lecturerUsername = sc.nextLine();
-                                            System.out.println();
-                                            System.out.println("Please, introduce a name for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
-                                            String lecturerName = sc.nextLine();
-                                            modifyLecturer(lecturerUsername, lecturerName, 1);
-                                            break;
-                                        case "2":
-                                            System.out.println();
-                                            System.out.println("Please, introduce lecturer username");
-                                            lecturerUsername = sc.nextLine();
-                                            System.out.println();
-                                            System.out.println("Please, introduce a new username for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
-                                            String lecturerNewUsername = sc.nextLine();
-                                            modifyLecturer(lecturerUsername, lecturerNewUsername, 2);
-                                            break;
-                                        case "3":
-                                            System.out.println();
-                                            System.out.println("Please, introduce lecturer username");
-                                            lecturerUsername = sc.nextLine();
-                                            System.out.println();
-                                            System.out.println("Please, introduce a new username for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
-                                            String lecturerNewPassword = sc.nextLine();
-                                            modifyLecturer(lecturerUsername, lecturerNewPassword, 3);
-                                            break;
-                                        default:
-                                            System.out.println("Cancelling Operation!!");
-                                            break;
-                                    }
-                                } else {
-                                    System.out.println();
-                                    System.out.println("Sorry, there is not any lecturers registered on the system");
-                                }
-                            } else {
-                                System.out.println();
-                                System.out.println("Cancelling Operation");
-                            }
-                            //Calling our DB and modify an user
+                            String userToModify = sc.nextLine();
+                            //Calling modifierUserSection Method
+                            modifierUserSection(userToModify);
                             break;
                         case "3":
-                            //Calling our DB and delete an user
+                            //DELETING SECTION
+                            //Calling deleteUser Method in order delete an user
                             System.out.println();
                             System.out.println("Press 1 - to delete the office user \n Press 2 - to delete lecturer user \n Press any button to cancel operation");
-                            String deleteUser = sc.nextLine();
-                            switch (deleteUser) {
-                                case "1":
-                                    if (officeAccount != null) {
-                                        officeAccount = null;
-                                        System.out.println();
-                                        System.out.println("office Account has been deleted");
-                                    } else {
-                                        System.out.println();
-                                        System.out.println("Sorry, there is no office Account already created");
-                                    }
-                                    break;
-                                case "2":
-                                    System.out.println();
-                                    System.out.println("Please, introduce lecturer username in order to delete it");
-                                    String lecturerUsername = sc.nextLine();
-                                    modifyLecturer(lecturerUsername, "", 4);
-                            }
+                            String userToDelete = sc.nextLine();
+                            //Calling deleteUser Method
+                            deleteUser(userToDelete);
                             break;
                         case "4":
                             //Changing our username
@@ -230,6 +85,259 @@ public class adminMenu extends mainMenu {
                 System.out.println();
                 System.out.println("Sorry, username or password is not correct or invalid");
                 mainWhileTrigger = true;
+            }
+        }
+    }
+    //Method created in order to create either office account or lecturers account
+    //Param office or lecturer ("1" or "2")
+    public void createAccount(String dataEntry) {
+        switch (dataEntry) {
+            case "1":
+                //Creating Office account
+                //If officeAccount has not been created yet, then it can be created.
+                if (officeAccount == null) {
+                    System.out.println();
+                    System.out.println("Please, introduce a name for the office account, must be equal or longer than 4 letters");
+                    String officeName = sc.nextLine();
+                    System.out.println();
+                    System.out.println("Please, introduce an username for the office account, must be equal or longer than 4 letters");
+                    String officeUsername = sc.nextLine();
+                    System.out.println("Please, introduce a password for the office account, must be equal or longer than 8 characteres");
+                    String officePassword = sc.nextLine();
+
+                    //validating all the entried data
+                    if (createAccountValidator(officeName, officeUsername, officePassword)) {
+                        //if data is correct, office account can be created
+                        officeAccount = new Office(officeName, officeUsername, officePassword);
+                    }
+                    break;
+                } else {
+                    System.out.println("Sorry, there is an Office Account already created");
+                }
+                break;
+            case "2":
+                //Creating lecturer account
+                System.out.println();
+                System.out.println("Please, introduce the name of the lecturer, must be equal or longer than 4 letters");
+                //Storing lecturer name
+                String lecturerName = sc.nextLine();
+                System.out.println();
+                System.out.println("Please, introduce an username for the lecturer account, must be equal or longer than 4 letters");
+                //storing lecturer username
+                String lecturerUsername = sc.nextLine();
+                System.out.println("Please, introduce a password for the lecturer account, must be equal or longer than 8 characteres");
+                //Storing lecturer password
+                String lecturerPassword = sc.nextLine();
+                if (createAccountValidator(lecturerName, lecturerUsername, lecturerPassword)) {
+                    //instancing new lecturer if data is correct
+                    Lecturer lecturer = new Lecturer(lecturerName, lecturerUsername, lecturerPassword);
+                    //adding the lecturer to ArrayList
+                    lecturers.add(lecturer);
+                }
+                break;
+            default:
+                System.out.println();
+                System.out.println("Cancelling Operation!!");
+                break;
+        }
+    }
+    //Method to modify office account or lecturers accounts
+    //Param office or lecturer ("1" or "2")
+    public void modifierUserSection(String userModify) {
+        switch (userModify) {
+            case "1":
+                //Checking if officeAccount exists. Otherwise we are not able to modify it
+                if (officeAccount != null) {
+                    System.out.println();
+                    System.out.println("Press 1 - to modify an office name \n Press 2 - to modify an office username \n Press 3 - to modify office password \n Press any other button to cancelling operation");
+                    switch (sc.nextLine()) {
+                        case "1":
+                            //Modifying Office name
+                            System.out.println();
+                            System.out.println("Please, introduce a name for the office account, must be longer than 4 letters");
+                            String officeNewName = sc.nextLine();
+                            //Calling office class setter
+                            officeAccount.setName(officeNewName);
+                            break;
+                        case "2":
+                            //Modifying Office username
+                            System.out.println();
+                            System.out.println("Please, introduce an username for the office account, must be longer than 4 letters");
+                            String officeNewUsername = sc.nextLine();
+                            //Calling office class setter
+                            officeAccount.setUsername(officeNewUsername);
+                            break;
+                        case "3":
+                            //Modifying Office Password    
+                            System.out.println();
+                            System.out.println("Please, introduce a password for the office account, must be longer than 8 characteres");
+                            String officeNewPassword = sc.nextLine();
+                            //Calling office class setter
+                            officeAccount.setPassword(officeNewPassword);
+                            break;
+                        default:
+                            System.out.println("Cancelling Operation!!");
+                            break;
+                    }
+                } else {
+                    System.out.println("Sorry, there is not an Office Account already created");
+                }
+                break;
+            case "2":
+                //Checking if arrayList is not empty, otherwise we are not able to modify lecturers
+                if (!(lecturers.isEmpty())) {
+                    System.out.println();
+                    System.out.println("Press 1 - to modify an lecturer name \n Press 2 - to modify an lecturer username \n Press 3 - to modify lecturer password \n Press any other button to cancelling operation");
+                    //lecturerUsername has been created to handle all choices within switch conditional
+                    String lecturerUsername;
+                    switch (sc.nextLine()) {
+                        case "1":
+                            //Modifying Lecturer name
+                            System.out.println();
+                            System.out.println("Please, introduce lecturer username");
+                            lecturerUsername = sc.nextLine();
+                            System.out.println();
+                            System.out.println("Please, introduce a name for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
+                            String lecturerName = sc.nextLine();
+                            //Calling modifyLecturer Method to modify lecturer name
+                            modifyLecturer(lecturerUsername, lecturerName, 1);
+                            break;
+                        case "2":
+                            //Modifying Lecturer username
+                            System.out.println();
+                            System.out.println("Please, introduce lecturer username");
+                            lecturerUsername = sc.nextLine();
+                            System.out.println();
+                            System.out.println("Please, introduce a new username for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
+                            String lecturerNewUsername = sc.nextLine();
+                            //Calling modifyLecturer Method to modify lecturer username
+                            modifyLecturer(lecturerUsername, lecturerNewUsername, 2);
+                            break;
+                        case "3":
+                            //Modifying Lecturer password
+                            System.out.println();
+                            System.out.println("Please, introduce lecturer username");
+                            lecturerUsername = sc.nextLine();
+                            System.out.println();
+                            System.out.println("Please, introduce a new username for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
+                            String lecturerNewPassword = sc.nextLine();
+                            //Calling modifyLecturer Method to modify lecturer password
+                            modifyLecturer(lecturerUsername, lecturerNewPassword, 3);
+                            break;
+                        default:
+                            System.out.println("Cancelling Operation!!");
+                            break;
+                    }
+                } else {
+                    System.out.println();
+                    System.out.println("Sorry, there is not any lecturers registered on the system");
+                }
+                break;
+            default:
+                System.out.println();
+                System.out.println("Cancelling Operation");
+                break;
+        }
+    }
+
+    //Method to delete office  or lecturers accounts.
+    //Param office or lecturer ("1" or "2")
+    public void deleteUser(String user) {
+        switch (user) {
+            case "1":
+                //Checking if officeAccount exists
+                if (officeAccount != null) {
+                    //Deleting officeAccount
+                    officeAccount = null;
+                    System.out.println();
+                    System.out.println("office Account has been deleted");
+                } else {
+                    System.out.println();
+                    System.out.println("Sorry, there is no office Account already created");
+                }
+                break;
+            case "2":
+                //Asking to user to introduce lecturer username in order to delete it
+                System.out.println();
+                System.out.println("Please, introduce lecturer username in order to delete it");
+                String lecturerUsername = sc.nextLine();
+                //Calling modifyLecturer Method giving lecturer username, no data and operation 4 for deleting
+                modifyLecturer(lecturerUsername, "", 4);
+                break;
+            default:
+                break;
+        }
+    }
+
+    //Method to validate office or lecturers accounts which will be created.
+    //Param office or lecturer name, username and password
+    public boolean createAccountValidator(String name, String username, String password) {
+        //Creating boolean variables in order to handle validator
+        boolean nameValidator;
+        boolean usernameValidator;
+        boolean passwordValidator;
+
+        //name must be longer than 3 letters
+        if (name.length() >= 4) {
+            nameValidator = true;
+        } else {
+            nameValidator = false;
+        }
+        //username must be longer than 3 letters
+        if (username.length() >= 4) {
+            usernameValidator = true;
+        } else {
+            usernameValidator = false;
+        }
+        //password must be longer than 7 letters
+        if (password.length() >= 4) {
+            passwordValidator = true;
+        } else {
+            passwordValidator = false;
+        }
+
+        //Return true when all validators are true
+        if (nameValidator == true && usernameValidator == true && passwordValidator == true) {
+            return true;
+        }
+        System.out.println();
+        System.out.println("Sorry, the account does not comply with requirements. Therefore It has not been created");
+        return false;
+    }
+
+    //Method Lecturer modifyier to change lecturer name, username or password. Also can delete the lecturer account
+    //Param lecturer username, data to be implemented and operation choice
+    public void modifyLecturer(String username, String data, int operation) {
+        //Iteratin our ArrayList
+        Iterator<Lecturer> itr = lecturers.iterator();
+
+        while (itr.hasNext()) {
+            Lecturer lecturer = itr.next();
+            //if lecturer username and password match with entry data it return true.
+            if (lecturer.getUsername().equals(username)) {
+                switch (operation) {
+                    case 1:
+                        //Changing lecturer name
+                        lecturer.setName(data);
+                        break;
+                    case 2:
+                        //Changing lecturer username
+                        lecturer.setUsername(data);
+                        break;
+                    case 3:
+                        //Changing lecturer password
+                        lecturer.setPassword(data);
+                        break;
+                    case 4:
+                        System.out.println("Lecturer " + lecturer.getName() + " has been deleted");
+                        itr.remove();
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                System.out.println();
+                System.out.println("Sorry, username invalid or does not exist");
             }
         }
     }

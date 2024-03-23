@@ -46,20 +46,16 @@ public class Lecturer {
 
     //Method Setter for lecturer username
     public void setUsername(String username) {
-        //it must be longer than 3 letters
-        if (username.length() >= 4) {
-            this.username = username;
-            System.out.println("Your username has been successfully changed");
-        }
+        this.username = username;
+        System.out.println("Your username has been successfully changed");
+
     }
 
     //Method Setter for lecturer password
     public void setPassword(String password) {
-        //it must be longer than 7 letters
-        if (username.length() >= 8) {
-            this.password = password;
-            System.out.println("Your passsword has been successfully changed");
-        }
+        this.password = password;
+        System.out.println("Your passsword has been successfully changed");
+
     }
 
     //Getting lecturers report
