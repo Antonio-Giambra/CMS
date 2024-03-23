@@ -1,6 +1,7 @@
 package Users;
 
 import dbConnector.dbConnector;
+import java.sql.SQLException;
 
 public class Office {
 
@@ -59,22 +60,19 @@ public class Office {
     }
 
     //Getting all reports
-    public void getReport(int reportType, String reportFormat) {
+    public void getReport(dbConnector db, int reportType, String reportFormat) throws SQLException {
         switch (reportType) {
             case 1:
-                dbConnector db = new dbConnector();
                 System.out.println("Course Report will be generated...");
                 db.getCourseReport(reportFormat);
                 break;
             case 2:
-                dbConnector db2 = new dbConnector();
                 System.out.println("Course Report will be generated...");
-                db2.getStudentReport(reportFormat);
+                db.getStudentReport(reportFormat);
                 break;
             case 3:
-                dbConnector db3 = new dbConnector();
                 System.out.println("Course Report will be generated...");
-                db3.getLecturerReport(reportFormat);
+                db.getLecturerReport(reportFormat);
                 break;
             default:
                 System.out.println("Sorry, you must enter a valid option");

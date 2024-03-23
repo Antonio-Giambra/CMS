@@ -1,6 +1,7 @@
 package Menu;
 
 import Users.Lecturer;
+import java.sql.SQLException;
 import java.util.Iterator;
 
 /**
@@ -56,7 +57,7 @@ public class lecturerMenu extends mainMenu {
         return null;
     }
 
-    public void start() {
+    public void start() throws SQLException {
         //Creating triggers in order to break the while loops below
         boolean mainWhileTrigger = false;
         boolean secondWhileTrigger = false;
@@ -88,15 +89,15 @@ public class lecturerMenu extends mainMenu {
                             switch (sc.nextLine()) {
                                 case "1":
                                     //Look for obtain report in txt format
-                                    lecturerTransactor.getReport("txt");
+                                    lecturerTransactor.getReport(db, "txt");
                                     break;
                                 case "2":
                                     //Look for obtain report in csv format
-                                    lecturerTransactor.getReport("csv");
+                                    lecturerTransactor.getReport(db, "csv");
                                     break;
                                 case "3":
                                     //Look for obtain report in console format
-                                    lecturerTransactor.getReport("console");
+                                    lecturerTransactor.getReport(db, "console");
                                     break;
                                 default:
                                     break;

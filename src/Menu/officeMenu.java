@@ -32,17 +32,18 @@ public class officeMenu extends mainMenu {
                                 System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
                                 switch (sc.nextLine()) {
                                     /*Caling office user method 
-                                     *Param 1 reportType (1 means course report)
-                                     *param 2 is the format
+                                     *param 1 database
+                                     *Param 2 reportType (1 means course report)
+                                     *param 3 is the format
                                      */
                                     case "1":
-                                        officeAccount.getReport(1, "txt");
+                                        officeAccount.getReport(db, 1, "txt");
                                         break;
                                     case "2":
-                                        officeAccount.getReport(1, "csv");
+                                        officeAccount.getReport(db, 1, "csv");
                                         break;
                                     case "3":
-                                        officeAccount.getReport(1, "console");
+                                        officeAccount.getReport(db, 1, "console");
                                         break;
                                     default:
                                         break;
@@ -54,17 +55,18 @@ public class officeMenu extends mainMenu {
                                 System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
                                 switch (sc.nextLine()) {
                                     /*Caling office user method 
-                                     *Param 1 reportType (2 means student report)
-                                     *param 2 is the format
+                                     *param 1 database
+                                     *Param 2 reportType (2 means student report)
+                                     *param 3 is the format
                                      */
                                     case "1":
-                                        officeAccount.getReport(2, "txt");
+                                        officeAccount.getReport(db, 2, "txt");
                                         break;
                                     case "2":
-                                        officeAccount.getReport(2, "csv");
+                                        officeAccount.getReport(db, 2, "csv");
                                         break;
                                     case "3":
-                                        officeAccount.getReport(2, "console");
+                                        officeAccount.getReport(db, 2, "console");
                                         break;
                                     default:
                                         break;
@@ -76,17 +78,18 @@ public class officeMenu extends mainMenu {
                                 System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
                                 switch (sc.nextLine()) {
                                     /*Caling office user method 
-                                     *Param 1 reportType (3 means lecturer report)
-                                     *param 2 is the format
+                                     *param 1 database
+                                     *Param 2 reportType (3 means lecturer report)
+                                     *param 3 is the format
                                      */
                                     case "1":
-                                        officeAccount.getReport(3, "txt");
+                                        officeAccount.getReport(db,3, "txt");
                                         break;
                                     case "2":
-                                        officeAccount.getReport(3, "csv");
+                                        officeAccount.getReport(db, 3, "csv");
                                         break;
                                     case "3":
-                                        officeAccount.getReport(3, "console");
+                                        officeAccount.getReport(db, 3, "console");
                                         break;
                                     default:
                                         break;

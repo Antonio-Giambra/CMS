@@ -1,6 +1,7 @@
 package Users;
 
 import dbConnector.dbConnector;
+import java.sql.SQLException;
 
 public class Lecturer {
 
@@ -59,10 +60,9 @@ public class Lecturer {
     }
 
     //Getting lecturers report
-    public void getReport(String reportFormat) {
+    public void getReport(dbConnector db, String reportFormat) throws SQLException {
         //Will get a report for themselves
-        dbConnector db3 = new dbConnector();
         System.out.println("Course Report will be generated...");
-        db3.getLecturerReport(reportFormat);
+        db.getLecturerReport(reportFormat);
     }
 }

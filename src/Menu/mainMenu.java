@@ -3,6 +3,7 @@ package Menu;
 import Users.Administrator;
 import Users.Lecturer;
 import Users.Office;
+import dbConnector.dbConnector;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,6 +21,8 @@ public class mainMenu {
     public ArrayList<Lecturer> lecturers = new ArrayList<>();
     //Creating the scanner for the whole menu an its sub-classes
     public Scanner sc = new Scanner(System.in);
+    //Creating dbConnector in order to open a connection with the database
+    public dbConnector db = new dbConnector();
     
     //Starting Menu
     public void startMenu() {
