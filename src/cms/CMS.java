@@ -11,7 +11,9 @@ public class CMS {
     //-------------------------------------------------------------------------------------------//
     
     public static void main(String[] args) {
+        //Creating a new instance of mainMenu
         mainMenu menu = new mainMenu();
+        //Calling mainMenu main method in order to start the process
         menu.startMenu();
     }
     

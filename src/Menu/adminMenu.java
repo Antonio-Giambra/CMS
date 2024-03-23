@@ -60,16 +60,26 @@ public class adminMenu extends mainMenu {
                         case "4":
                             //Changing our username
                             System.out.println();
-                            System.out.println("Please introduce your new username");
-                            String adminUsername = sc.nextLine();
-                            admin.setUsername(adminUsername);
+                            System.out.println("Please introduce your new username, it needs to be longer than 3 letters");
+                            String adminNewUsername = sc.nextLine();
+                            if(adminNewUsername.length() >= 4){
+                                admin.setUsername(adminNewUsername);
+                            }else{
+                                System.out.println();
+                                System.out.println("Sorry, the username does not comply with requirements");
+                            }
                             break;
                         case "5":
                             //Changing our password
                             System.out.println();
-                            System.out.println("Please introduce your new password");
-                            String adminPassword = sc.nextLine();
-                            admin.setPassword(adminPassword);
+                            System.out.println("Please introduce your new password, it needs to be longer than 8 letters");
+                            String adminNewPassword = sc.nextLine();
+                            if(adminNewPassword.length() >= 8){
+                                admin.setPassword(adminNewPassword);
+                            }else{
+                                System.out.println();
+                                System.out.println("Sorry, the password does not comply with requirements");
+                            }
                             break;
                         case "6":
                             // Logging out

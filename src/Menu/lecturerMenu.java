@@ -105,16 +105,26 @@ public class lecturerMenu extends mainMenu {
                         case "2":
                             //Changing lecturer username
                             System.out.println();
-                            System.out.println("Please introduce your new username");
+                            System.out.println("Please introduce your new username, it needs to be longer than 3 letters");
                             String lecturerNewUsername = sc.nextLine();
-                            lecturerTransactor.setUsername(lecturerNewUsername);
+                            if(lecturerNewUsername.length() >= 4){
+                                lecturerTransactor.setUsername(lecturerNewUsername);
+                            }else{
+                                System.out.println();
+                                System.out.println("Sorry, the username does not comply with requirements");
+                            }
                             break;
                         case "3":
                             //Changing lecturer password
                             System.out.println();
-                            System.out.println("Please introduce your new password");
+                            System.out.println("Please introduce your new password, it needs to be longer than 7 letters");
                             String lecturerNewPassword = sc.nextLine();
-                            lecturerTransactor.setPassword(lecturerNewPassword);
+                            if(lecturerNewPassword.length() >= 8){
+                                lecturerTransactor.setPassword(lecturerNewPassword);
+                            }else{
+                                System.out.println();
+                                System.out.println("Sorry, the password does not comply with requirements");
+                            }
                             break;
                         case "4":
                             // Logging out

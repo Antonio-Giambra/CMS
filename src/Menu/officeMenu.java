@@ -97,14 +97,24 @@ public class officeMenu extends mainMenu {
                                 System.out.println();
                                 System.out.println("Please introduce your new username");
                                 String officeNewUsername = sc.nextLine();
-                                officeAccount.setUsername(officeNewUsername);
+                                if(officeNewUsername.length() >= 4){
+                                    officeAccount.setUsername(officeNewUsername);
+                                }else {
+                                    System.out.println();
+                                    System.out.println("Sorry, the username does not comply with requirements");
+                                }
                                 break;
                             case "5":
                                 //Changing office account's password
                                 System.out.println();
                                 System.out.println("Please introduce your new password");
                                 String officeNewPassword = sc.nextLine();
-                                officeAccount.setPassword(officeNewPassword);
+                                if(officeNewPassword.length() >= 8){
+                                    officeAccount.setPassword(officeNewPassword);
+                                }else{
+                                    System.out.println();
+                                    System.out.println("Sorry, the password does not comply with requirements");
+                                }
                                 break;
                             case "6":
                                 // Logging out
