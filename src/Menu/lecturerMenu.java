@@ -47,11 +47,11 @@ public class lecturerMenu extends mainMenu {
             System.out.println();
             System.out.println("Please introduce your lecturer username with capital letter if needed.");
             //Variable username to compare office username
-            String username = getNextLine();
+            String username = sc.nextLine();
             System.out.println();
             System.out.println("Please introduce your lecturer password with capital letter if needed.");
             //Variable password to compare office password
-            String password = getNextLine();
+            String password = sc.nextLine();
             //Comparing data introduced by user in order to log in office account
             if (lecturerValidator(username, password)) {
                 //Lecturer instance has been created in order to work with his/her data and processes
@@ -60,13 +60,13 @@ public class lecturerMenu extends mainMenu {
                     System.out.println();
                     System.out.println("Welcome " + lecturerTransactor.getName() + "\n Press 1 - to generate a Lecturers Report \n Press 2 - to change your username \n Press 3 - to change your password \n Press 4 - to log out");
                     //String optionSelected has been created in order to store user entry
-                    String optionSelected = getNextLine();
+                    String optionSelected = sc.nextLine();
                     switch (optionSelected) {
                         case "1":
                             //Calling our DB to generate a course report
                             System.out.println();
                             System.out.println("Please select the file format for the report \n Press 1 - TXT format \n Press 2 - CSV Format \n Press 3 - to display it in console");
-                            switch (getNextLine()) {
+                            switch (sc.nextLine()) {
                                 case "1":
                                     lecturerTransactor.getReport("txt");
                                     break;
@@ -84,14 +84,14 @@ public class lecturerMenu extends mainMenu {
                             //Changing our username
                             System.out.println();
                             System.out.println("Please introduce your new username");
-                            String lecturerNewUsername = getNextLine();
+                            String lecturerNewUsername = sc.nextLine();
                             lecturerTransactor.setUsername(lecturerNewUsername);
                             break;
                         case "3":
                             //Changing our password
                             System.out.println();
                             System.out.println("Please introduce your new password");
-                            String lecturerNewPassword = getNextLine();
+                            String lecturerNewPassword = sc.nextLine();
                             lecturerTransactor.setPassword(lecturerNewPassword);
                             break;
                         case "4":
