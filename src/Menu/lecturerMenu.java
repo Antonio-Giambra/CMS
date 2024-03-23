@@ -10,53 +10,6 @@ import java.util.Iterator;
  */
 public class lecturerMenu extends mainMenu {
 
-    //lecturerValidator Method to check if lecturer account concur with lecturer account inside the ArrayList.
-    //Method return True or False
-    //Param lecturer username, lecturer password
-    public boolean lecturerValidator(String username, String password) {
-        try {
-            //Iteratin our ArrayList
-            Iterator<Lecturer> itr = lecturers.iterator();
-
-            while (itr.hasNext()) {
-                Lecturer lecturer = itr.next();
-                //if lecturer username and password match with entry data it return true.
-                if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
-                    return true;
-                }
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    //lecturerInfo Method to check if the lecturer account matches the lecturer account within the ArrayList to get the properties of the lecturer user.
-    //Method return the lecturer selected or null type
-    //Param lecturer username, lecturer password
-    public Lecturer lecturerInfo(String username, String password) {
-        try {
-            //Iteratin our ArrayList
-            Iterator<Lecturer> itr = lecturers.iterator();
-
-            while (itr.hasNext()) {
-                Lecturer lecturer = itr.next();
-                //if lecturer username and password match with entry data it return true.
-                if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
-                    return lecturer;
-                } else {
-                    System.out.println();
-                    System.out.println("Sorry, lecturer invalid or does not exist.");
-                }
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public void start() throws SQLException {
         //Creating triggers in order to break the while loops below
         boolean mainWhileTrigger = false;
@@ -108,9 +61,9 @@ public class lecturerMenu extends mainMenu {
                             System.out.println();
                             System.out.println("Please introduce your new username, it needs to be longer than 3 letters");
                             String lecturerNewUsername = sc.nextLine();
-                            if(lecturerNewUsername.length() >= 4){
+                            if (lecturerNewUsername.length() >= 4) {
                                 lecturerTransactor.setUsername(lecturerNewUsername);
-                            }else{
+                            } else {
                                 System.out.println();
                                 System.out.println("Sorry, the username does not comply with requirements");
                             }
@@ -120,9 +73,9 @@ public class lecturerMenu extends mainMenu {
                             System.out.println();
                             System.out.println("Please introduce your new password, it needs to be longer than 7 letters");
                             String lecturerNewPassword = sc.nextLine();
-                            if(lecturerNewPassword.length() >= 8){
+                            if (lecturerNewPassword.length() >= 8) {
                                 lecturerTransactor.setPassword(lecturerNewPassword);
-                            }else{
+                            } else {
                                 System.out.println();
                                 System.out.println("Sorry, the password does not comply with requirements");
                             }
@@ -143,6 +96,60 @@ public class lecturerMenu extends mainMenu {
                 mainWhileTrigger = true;
             }
         }
+    }
+
+    //lecturerValidator Method to check if lecturer account concur with lecturer account inside the ArrayList.
+    //Method return True or False
+    //Param lecturer username, lecturer password
+    public boolean lecturerValidator(String username, String password) {
+        try {
+            //Iteratin our ArrayList
+            Iterator<Lecturer> itr = lecturers.iterator();
+
+            while (itr.hasNext()) {
+                Lecturer lecturer = itr.next();
+                //if lecturer username and password match with entry data it return true.
+                if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
+                    return true;
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    //lecturerInfo Method to check if the lecturer account matches the lecturer account within the ArrayList to get the properties of the lecturer user.
+    //Method return the lecturer selected or null type
+    //Param lecturer username, lecturer password
+    public Lecturer lecturerInfo(String username, String password) {
+        try {
+            //Iteratin our ArrayList
+            Iterator<Lecturer> itr = lecturers.iterator();
+            //trigger created if an account does not exist
+            boolean lecturerFound = false;
+            while (itr.hasNext()) {
+                Lecturer lecturer = itr.next();
+                //if lecturer username and password match with entry data it return true.
+                if (lecturer.getUsername().equals(username) && lecturer.getPassword().equals(password)) {
+                    lecturerFound = true;
+                    return lecturer;
+                } else {
+                    System.out.println();
+                    System.out.println("Sorry, lecturer invalid or does not exist.");
+                }
+
+            }
+            if (!lecturerFound) {
+                // Print message if lecturer with provided username is not found
+                System.out.println("Sorry, username invalid or does not exist");
+            }
+            //Prints the stack trace if an error occurs
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

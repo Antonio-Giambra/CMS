@@ -1,11 +1,14 @@
 package Menu;
 
+import static Menu.mainMenu.lecturers;
+import static Menu.mainMenu.officeAccount;
+import static Menu.mainMenu.sc;
 import Users.Lecturer;
 import Users.Office;
 import java.util.Iterator;
 
 public class adminMenu extends mainMenu {
-    
+
     //Starting Admin Menu
     public void start() {
         //Creating triggers in order to break the while loops below
@@ -62,9 +65,9 @@ public class adminMenu extends mainMenu {
                             System.out.println();
                             System.out.println("Please introduce your new username, it needs to be longer than 3 letters");
                             String adminNewUsername = sc.nextLine();
-                            if(adminNewUsername.length() >= 4){
+                            if (adminNewUsername.length() >= 4) {
                                 admin.setUsername(adminNewUsername);
-                            }else{
+                            } else {
                                 System.out.println();
                                 System.out.println("Sorry, the username does not comply with requirements");
                             }
@@ -74,9 +77,9 @@ public class adminMenu extends mainMenu {
                             System.out.println();
                             System.out.println("Please introduce your new password, it needs to be longer than 8 letters");
                             String adminNewPassword = sc.nextLine();
-                            if(adminNewPassword.length() >= 8){
+                            if (adminNewPassword.length() >= 8) {
                                 admin.setPassword(adminNewPassword);
-                            }else{
+                            } else {
                                 System.out.println();
                                 System.out.println("Sorry, the password does not comply with requirements");
                             }
@@ -98,6 +101,7 @@ public class adminMenu extends mainMenu {
             }
         }
     }
+
     //Method created in order to create either office account or lecturers account
     //Param office or lecturer ("1" or "2")
     public void createAccount(String dataEntry) {
@@ -151,6 +155,7 @@ public class adminMenu extends mainMenu {
                 break;
         }
     }
+
     //Method to modify office account or lecturers accounts
     //Param office or lecturer ("1" or "2")
     public void modifierUserSection(String userModify) {
@@ -164,26 +169,41 @@ public class adminMenu extends mainMenu {
                         case "1":
                             //Modifying Office name
                             System.out.println();
-                            System.out.println("Please, introduce a name for the office account, must be longer than 4 letters");
+                            System.out.println("Please, introduce a name for the office account, must be equal or longer than 4 letters");
                             String officeNewName = sc.nextLine();
-                            //Calling office class setter
-                            officeAccount.setName(officeNewName);
+                            if (officeNewName.length() >= 4) {
+                                //Calling office class setter
+                                officeAccount.setName(officeNewName);
+                            } else {
+                                System.out.println();
+                                System.out.println("Sorry, the name does not comply with requirements");
+                            }
                             break;
                         case "2":
                             //Modifying Office username
                             System.out.println();
-                            System.out.println("Please, introduce an username for the office account, must be longer than 4 letters");
+                            System.out.println("Please, introduce an username for the office account, must be equal or longer than 4 letters");
                             String officeNewUsername = sc.nextLine();
-                            //Calling office class setter
-                            officeAccount.setUsername(officeNewUsername);
+                            if (officeNewUsername.length() >= 4) {
+                                //Calling office class setter
+                                officeAccount.setUsername(officeNewUsername);
+                            } else {
+                                System.out.println();
+                                System.out.println("Sorry, the username does not comply with requirements");
+                            }
                             break;
                         case "3":
                             //Modifying Office Password    
                             System.out.println();
-                            System.out.println("Please, introduce a password for the office account, must be longer than 8 characteres");
+                            System.out.println("Please, introduce a password for the office account, must be equal or longer than 8 characteres");
                             String officeNewPassword = sc.nextLine();
-                            //Calling office class setter
-                            officeAccount.setPassword(officeNewPassword);
+                            if (officeNewPassword.length() >= 8) {
+                                //Calling office class setter
+                                officeAccount.setPassword(officeNewPassword);
+                            } else {
+                                System.out.println();
+                                System.out.println("Sorry, the password does not comply with requirements");
+                            }
                             break;
                         default:
                             System.out.println("Cancelling Operation!!");
@@ -207,10 +227,15 @@ public class adminMenu extends mainMenu {
                             System.out.println("Please, introduce lecturer username");
                             lecturerUsername = sc.nextLine();
                             System.out.println();
-                            System.out.println("Please, introduce a name for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
-                            String lecturerName = sc.nextLine();
+                            System.out.println("Please, introduce a name for the lecturer " + lecturerUsername + " account, must be equal or longer than 4 letters");
+                            String lecturerNewName = sc.nextLine();
                             //Calling modifyLecturer Method to modify lecturer name
-                            modifyLecturer(lecturerUsername, lecturerName, 1);
+                            if (lecturerNewName.length() >= 4) {
+                                modifyLecturer(lecturerUsername, lecturerNewName, 1);
+                            } else {
+                                System.out.println();
+                                System.out.println("Sorry, the name does not comply with requirements");
+                            }
                             break;
                         case "2":
                             //Modifying Lecturer username
@@ -218,10 +243,15 @@ public class adminMenu extends mainMenu {
                             System.out.println("Please, introduce lecturer username");
                             lecturerUsername = sc.nextLine();
                             System.out.println();
-                            System.out.println("Please, introduce a new username for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
+                            System.out.println("Please, introduce a new username for the lecturer " + lecturerUsername + " account, must be equal or longer than 4 letters");
                             String lecturerNewUsername = sc.nextLine();
-                            //Calling modifyLecturer Method to modify lecturer username
-                            modifyLecturer(lecturerUsername, lecturerNewUsername, 2);
+                            if (lecturerNewUsername.length() >= 4) {
+                                //Calling modifyLecturer Method to modify lecturer username
+                                modifyLecturer(lecturerUsername, lecturerNewUsername, 2);
+                            } else {
+                                System.out.println();
+                                System.out.println("Sorry, the username does not comply with requirements");
+                            }
                             break;
                         case "3":
                             //Modifying Lecturer password
@@ -229,10 +259,15 @@ public class adminMenu extends mainMenu {
                             System.out.println("Please, introduce lecturer username");
                             lecturerUsername = sc.nextLine();
                             System.out.println();
-                            System.out.println("Please, introduce a new username for the lecturer " + lecturerUsername + " account, must be longer than 4 letters");
+                            System.out.println("Please, introduce a new password for the lecturer " + lecturerUsername + " account, must be equal or longer than 8 letters");
                             String lecturerNewPassword = sc.nextLine();
-                            //Calling modifyLecturer Method to modify lecturer password
-                            modifyLecturer(lecturerUsername, lecturerNewPassword, 3);
+                            if (lecturerNewPassword.length() >= 8) {
+                                //Calling modifyLecturer Method to modify lecturer password
+                                modifyLecturer(lecturerUsername, lecturerNewPassword, 3);
+                            } else {
+                                System.out.println();
+                                System.out.println("Sorry, the password does not comply with requirements");
+                            }
                             break;
                         default:
                             System.out.println("Cancelling Operation!!");
@@ -300,7 +335,7 @@ public class adminMenu extends mainMenu {
             usernameValidator = false;
         }
         //password must be longer than 7 letters
-        if (password.length() >= 4) {
+        if (password.length() >= 8) {
             passwordValidator = true;
         } else {
             passwordValidator = false;
@@ -320,11 +355,14 @@ public class adminMenu extends mainMenu {
     public void modifyLecturer(String username, String data, int operation) {
         //Iteratin our ArrayList
         Iterator<Lecturer> itr = lecturers.iterator();
+        //trigger created if an account does not exist
+        boolean lecturerFound = false;
 
         while (itr.hasNext()) {
             Lecturer lecturer = itr.next();
             //if lecturer username and password match with entry data it return true.
             if (lecturer.getUsername().equals(username)) {
+                lecturerFound = true;
                 switch (operation) {
                     case 1:
                         //Changing lecturer name
@@ -345,10 +383,11 @@ public class adminMenu extends mainMenu {
                     default:
                         break;
                 }
-            } else {
-                System.out.println();
-                System.out.println("Sorry, username invalid or does not exist");
             }
+        }
+        if (!lecturerFound) {
+            // Print message if lecturer with provided username is not found
+            System.out.println("Sorry, username invalid or does not exist");
         }
     }
 }

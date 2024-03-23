@@ -4,6 +4,7 @@ import Users.Administrator;
 import Users.Lecturer;
 import Users.Office;
 import dbConnector.dbConnector;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,16 +17,19 @@ public class mainMenu {
     //Instancing an admin user in onder to start the process
     Administrator admin = new Administrator();
     //Instancing an Office class for future office account needed
-    public Office officeAccount;
+    public static Office officeAccount;
     //ArrayList for lecturers to store lecturers accounts
-    public ArrayList<Lecturer> lecturers = new ArrayList<>();
+    public static ArrayList<Lecturer> lecturers = new ArrayList<>();
     //Creating the scanner for the whole menu an its sub-classes
-    public Scanner sc = new Scanner(System.in);
-    //Creating dbConnector in order to open a connection with the database
-    public dbConnector db = new dbConnector();
-    
+    public static Scanner sc = new Scanner(System.in);
+
+    /**
+     * Creating dbConnector in order to open a connection with the database
+     */
+    public static dbConnector db = new dbConnector();
+
     //Starting Menu
-    public void startMenu() {
+    public void startMenu() throws SQLException {
 
         //Creating instances of the three diferent menus
         adminMenu adminmenu = new adminMenu();
@@ -37,6 +41,7 @@ public class mainMenu {
 
         //First part of menu
         while (trigger == false) {
+
             System.out.println("Welcome to Content Management System \n\n Press 1 - to connect an Admin Account \n Press 2 - to connect an Office Account \n Press 3 - to connect a Lecturer Account\n Press 4 - to exit the system");
             //Storing what user entered in the console
             String userConnection = sc.nextLine();

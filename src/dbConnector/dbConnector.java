@@ -212,7 +212,7 @@ public class dbConnector {
     }
 
     /*-------------------------------------------------------------------------------------
-                    THE CODE BELOW HAVE BEEN CREATED FOR FUTURE USAGE
+                    THE CODE BELOW HAS BEEN CREATED FOR FUTURE USAGE
     -------------------------------------------------------------------------------------*/
     //Database Creation Method for future use.
     public void createDB() {

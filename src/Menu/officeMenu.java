@@ -19,7 +19,6 @@ public class officeMenu extends mainMenu {
                 String password = sc.nextLine();
                 //Comparing data introduced by user in order to log in office account
                 if (username.equals(officeAccount.getUsername()) && password.equals(officeAccount.getPassword())) {
-
                     while (secondWhileTrigger == false) {
                         System.out.println();
                         System.out.println("Welcome " + officeAccount.getName() + "\n Press 1 - to generate a Course Report \n Press 2 - to generate a Students Report \n Press 3 - to generate a Lecturers Report \n Press 4 - to change your username \n Press 5 - to change your password \n Press 6 - to log out");
@@ -83,7 +82,7 @@ public class officeMenu extends mainMenu {
                                      *param 3 is the format
                                      */
                                     case "1":
-                                        officeAccount.getReport(db,3, "txt");
+                                        officeAccount.getReport(db, 3, "txt");
                                         break;
                                     case "2":
                                         officeAccount.getReport(db, 3, "csv");
@@ -100,9 +99,9 @@ public class officeMenu extends mainMenu {
                                 System.out.println();
                                 System.out.println("Please introduce your new username");
                                 String officeNewUsername = sc.nextLine();
-                                if(officeNewUsername.length() >= 4){
+                                if (officeNewUsername.length() >= 4) {
                                     officeAccount.setUsername(officeNewUsername);
-                                }else {
+                                } else {
                                     System.out.println();
                                     System.out.println("Sorry, the username does not comply with requirements");
                                 }
@@ -112,9 +111,9 @@ public class officeMenu extends mainMenu {
                                 System.out.println();
                                 System.out.println("Please introduce your new password");
                                 String officeNewPassword = sc.nextLine();
-                                if(officeNewPassword.length() >= 8){
+                                if (officeNewPassword.length() >= 8) {
                                     officeAccount.setPassword(officeNewPassword);
-                                }else{
+                                } else {
                                     System.out.println();
                                     System.out.println("Sorry, the password does not comply with requirements");
                                 }
