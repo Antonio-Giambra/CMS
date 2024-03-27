@@ -22,6 +22,21 @@ public class mainMenu {
     public static ArrayList<Lecturer> lecturers = new ArrayList<>();
     //Creating the scanner for the whole menu an its sub-classes
     public static Scanner sc = new Scanner(System.in);
+    /*
+        This regular expression ensures that the string:
+        - Starts with a non-whitespace character (\\S) at the beginning (\\A).
+        - Has at least two non-whitespace characters (\\S{2,}) following the initial character.
+        - Ends with a non-whitespace character (\\S) at the end (\\z).
+        */
+    public static String regex4CharLength = "\\A\\S(?!\\s)\\S{2,}\\S\\z";
+        
+        /*This regular expression ensures that the string:
+        - Starts with a non-whitespace character.
+        - Has at least six characters following the initial non-whitespace character.
+        - Ends with a non-whitespace character.
+        - The total length of the string is at least 8 characters.
+        */
+    public static String regex8CharLength = "\\A\\S(?!\\s)\\S{6,}\\S\\z";
 
     /**
      * Creating dbConnector in order to open a connection with the database

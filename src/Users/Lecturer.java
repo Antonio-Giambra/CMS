@@ -8,12 +8,14 @@ public class Lecturer {
     private String name;
     private String username;
     private String password;
+    private String role;
 
     //Default Lecturer constructor
     public Lecturer() {
         this.name = "Lecturer";
         this.username = "lecturer";
         this.password = "java";
+        this.role = "professor";
     }
 
     //Method Getter for lecturer username
@@ -30,12 +32,17 @@ public class Lecturer {
     public String getPassword() {
         return password;
     }
+    //Method Getter for lecturer role
+    public String getRole() {
+        return role;
+    }
 
     //Lecturer cosntructor with parameters name, username and password
-    public Lecturer(String name, String username, String password) {
+    public Lecturer(String name, String username, String password, String role) {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.role = role;
         System.out.println("Your Lecturer Account has been successfully created");
     }
 
@@ -57,6 +64,12 @@ public class Lecturer {
         this.password = password;
         System.out.println("Your passsword has been successfully changed");
 
+    }
+    
+    //Method Setter for lecturer role
+    public void setRole(String role) {
+        this.role = role;
+        System.out.println("Lecturer name has been successfully changed");
     }
 
     //Getting lecturers report

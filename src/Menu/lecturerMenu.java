@@ -9,7 +9,7 @@ import java.util.Iterator;
  * @author Antonio
  */
 public class lecturerMenu extends mainMenu {
-
+    //Starting the menu for lecturer accounts
     public void start() throws SQLException {
         //Creating triggers in order to break the while loops below
         boolean mainWhileTrigger = false;
@@ -59,14 +59,14 @@ public class lecturerMenu extends mainMenu {
                         case "2":
                             //Changing lecturer username
                             System.out.println();
-                            System.out.println("Please introduce your new username, it needs to be longer than 3 letters");
+                            System.out.println("Please introduce your new username, it needs to be equal or longer than 4 letters, white spaces are not admited");
                             String lecturerNewUsername = sc.nextLine();
                             changeUsername(lecturerTransactor, lecturerNewUsername);
                             break;
                         case "3":
                             //Changing lecturer password
                             System.out.println();
-                            System.out.println("Please introduce your new password, it needs to be longer than 7 letters");
+                            System.out.println("Please introduce your new password, it needs to be equal or longer than 8 letters, white spaces are not admited");
                             String lecturerNewPassword = sc.nextLine();
                             changePassword(lecturerTransactor, lecturerNewPassword);
                             break;
@@ -83,6 +83,7 @@ public class lecturerMenu extends mainMenu {
             } else {
                 System.out.println();
                 System.out.println("Sorry, username or password is not correct or invalid");
+                //Breaking while loop
                 mainWhileTrigger = true;
             }
         }
@@ -91,7 +92,7 @@ public class lecturerMenu extends mainMenu {
     //The method changeUsername takes the parameter lecturer and lecturerNewUsername, which represents the new username to be assigned to the lecturer account.
     public void changeUsername(Lecturer lecturer, String lecturerNewUsername) {
         // Check if the length of the new username is at least 4 characters
-        if (lecturerNewUsername.length() >= 4) {
+        if (lecturerNewUsername.matches(regex4CharLength)) {
             lecturer.setUsername(lecturerNewUsername);
         } else {
             System.out.println();
@@ -101,7 +102,7 @@ public class lecturerMenu extends mainMenu {
     //The method changePassword takes the parameters lecturer and lecturerNewUsername, which represents the new password to be assigned to the lecturer account.
     public void changePassword(Lecturer lecturer, String lecturerNewPassword) {
         // Check if the length of the new username is at least 8 characters
-        if (lecturerNewPassword.length() >= 8) {
+        if (lecturerNewPassword.matches(regex8CharLength)) {
             lecturer.setPassword(lecturerNewPassword);
         } else {
             System.out.println();

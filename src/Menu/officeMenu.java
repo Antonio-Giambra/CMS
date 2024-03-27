@@ -1,7 +1,7 @@
 package Menu;
 
 public class officeMenu extends mainMenu {
-
+//Starting the menu for office account
     public void start() {
         try {
             //Creating triggers in order to break the while loops below
@@ -97,14 +97,14 @@ public class officeMenu extends mainMenu {
                             case "4":
                                 //Changing office account's username
                                 System.out.println();
-                                System.out.println("Please introduce your new username");
+                                System.out.println("Please introduce your new username, must be equal or longer than 4 characteres, white spaces are not admited");
                                 String officeNewUsername = sc.nextLine();
                                 changeUsername(officeNewUsername);
                                 break;
                             case "5":
                                 //Changing office account's password
                                 System.out.println();
-                                System.out.println("Please introduce your new password");
+                                System.out.println("Please introduce your new password, must be equal or longer than 8 characteres, white spaces are not admited");
                                 String officeNewPassword = sc.nextLine();
                                 changePassword(officeNewPassword);
                                 break;
@@ -132,8 +132,8 @@ public class officeMenu extends mainMenu {
     //The method changeUsername takes a parameter officeNewUsername, which represents the new username to be assigned to the office account.
     //
     public void changeUsername(String officeNewUsername) {
-        // Check if the length of the new username is at least 4 characters
-        if (officeNewUsername.length() >= 4) {
+        // Check if the length of the new username is at least 4 characters, no white spaces
+        if (officeNewUsername.matches(regex4CharLength)) {
             officeAccount.setUsername(officeNewUsername);
         } else {
             System.out.println();
@@ -143,8 +143,8 @@ public class officeMenu extends mainMenu {
     //The method changePassword takes a parameter officeNewUsername, which represents the new password to be assigned to the office account.
     //
     public void changePassword(String officeNewPassword) {
-        // Check if the length of the new username is at least 8 characters
-        if (officeNewPassword.length() >= 8) {
+        // Check if the length of the new username is at least 8 characters, no white spaces
+        if (officeNewPassword.matches(regex8CharLength)) {
             officeAccount.setPassword(officeNewPassword);
         } else {
             System.out.println();

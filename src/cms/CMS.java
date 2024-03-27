@@ -10,7 +10,7 @@ public class CMS {
     //-----------------------------------GITHUB REPOSITORY---------------------------------------//
     //------------------------- https://github.com/Antonio-Giambra/CMS --------------------------//
     //-------------------------------------------------------------------------------------------//
-    
+    // Code has been tested and ready for releasing
     public static void main(String[] args) throws SQLException {
         //Creating a new instance of mainMenu
         mainMenu menu = new mainMenu();

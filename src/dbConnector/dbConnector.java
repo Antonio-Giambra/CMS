@@ -16,9 +16,9 @@ public class dbConnector {
     // Database Url
     private final String DB_URL = "jdbc:mysql://localhost";
     // Database Username
-    private final String USER = "root";
+    private final String USER = "pooa2024";
     //Database Password
-    private final String PASSWORD = "Tuesday06062023";
+    private final String PASSWORD = "pooa2024";
     // XML path for all reports
     private final String[] txtPath = {"CourseReport.txt", "StudentReport.txt", "LecturerReport.txt"};
     // CSV path for all reports
@@ -209,54 +209,5 @@ public class dbConnector {
         for (String dataLine : data) {
             System.out.println(dataLine);
         }
-    }
-
-    /*-------------------------------------------------------------------------------------
-                    THE CODE BELOW HAS BEEN CREATED FOR FUTURE USAGE
-    -------------------------------------------------------------------------------------*/
-    //Database Creation Method for future use.
-    public void createDB() {
-        try {
-            // Establish a connection to the database
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-            // Create a statement object for executing SQL queries
-            Statement stmt = conn.createStatement();
-            //Create the database
-            stmt.execute("CREATE DATABASE IF NOT EXISTS cms;");
-            System.out.println("Database sucessfully created;");
-            // Close the database connection
-            conn.close();
-        } catch (Exception e) {
-            //Prints the stack trace if an error occurs
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     *
-     * @param student
-     * @throws SQLException Method to add new students
-     */
-    public void addNewStudent() throws SQLException {
-        // Establish a connection to the database
-        Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-        // Create a statement object for executing SQL queries
-        Statement stmt = conn.createStatement();
-        // Use the specific database schema
-        stmt.execute("USE cms;");
-        // Start a new transaction
-        stmt.execute("START TRANSACTION;");
-        // Lock the Students table for writing to prevent concurrent modifications
-        stmt.execute("LOCK TABLES Students WRITE;");
-        // Prepare the SQL statement for inserting a new student record
-        // The actual values will be provided later using PreparedStatement
-        stmt.execute("INSERT INTO students(student_name, student_surname, student_age, student_gender, student_emailAddress, student_address, student_phone_number) VALUES (?, ?, ?, ?, ?, ?, ?);");
-        // Unlock the Students table after inserting the new student record
-        stmt.execute("UNLOCK TABLES;");
-        // Commit the transaction to make the changes permanent in the database
-        stmt.execute("COMMIT;");
-        System.out.println("Stundent sucessfully added");
-        // Close the database connection
-        conn.close();
     }
 }
