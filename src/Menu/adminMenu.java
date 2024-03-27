@@ -49,7 +49,7 @@ public class adminMenu extends mainMenu {
                             System.out.println("Press 1 - to modify an office user \n Press 2 - to modify lecturer user \n Press any button to cancel operation");
                             String userToModify = sc.nextLine();
                             //Calling modifierUserSection Method
-                            modifierUserSection(userToModify);
+                            userSelectedToModify(userToModify);
                             break;
                         case "3":
                             //DELETING SECTION
@@ -158,8 +158,8 @@ public class adminMenu extends mainMenu {
 
     //Method to modify office account or lecturers accounts
     //Param office or lecturer ("1" or "2")
-    public void modifierUserSection(String userModify) {
-        switch (userModify) {
+    public void userSelectedToModify(String userToModify) {
+        switch (userToModify) {
             case "1":
                 //Checking if officeAccount exists. Otherwise we are not able to modify it
                 if (officeAccount != null) {
@@ -385,6 +385,7 @@ public class adminMenu extends mainMenu {
                 }
             }
         }
+        //If Lecturer is not in the list, a helpful message will show up
         if (!lecturerFound) {
             // Print message if lecturer with provided username is not found
             System.out.println("Sorry, username invalid or does not exist");

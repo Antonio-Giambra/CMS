@@ -99,24 +99,14 @@ public class officeMenu extends mainMenu {
                                 System.out.println();
                                 System.out.println("Please introduce your new username");
                                 String officeNewUsername = sc.nextLine();
-                                if (officeNewUsername.length() >= 4) {
-                                    officeAccount.setUsername(officeNewUsername);
-                                } else {
-                                    System.out.println();
-                                    System.out.println("Sorry, the username does not comply with requirements");
-                                }
+                                changeUsername(officeNewUsername);
                                 break;
                             case "5":
                                 //Changing office account's password
                                 System.out.println();
                                 System.out.println("Please introduce your new password");
                                 String officeNewPassword = sc.nextLine();
-                                if (officeNewPassword.length() >= 8) {
-                                    officeAccount.setPassword(officeNewPassword);
-                                } else {
-                                    System.out.println();
-                                    System.out.println("Sorry, the password does not comply with requirements");
-                                }
+                                changePassword(officeNewPassword);
                                 break;
                             case "6":
                                 // Logging out
@@ -137,6 +127,28 @@ public class officeMenu extends mainMenu {
             }
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+    //The method changeUsername takes a parameter officeNewUsername, which represents the new username to be assigned to the office account.
+    //
+    public void changeUsername(String officeNewUsername) {
+        // Check if the length of the new username is at least 4 characters
+        if (officeNewUsername.length() >= 4) {
+            officeAccount.setUsername(officeNewUsername);
+        } else {
+            System.out.println();
+            System.out.println("Sorry, the username does not comply with requirements");
+        }
+    }
+    //The method changePassword takes a parameter officeNewUsername, which represents the new password to be assigned to the office account.
+    //
+    public void changePassword(String officeNewPassword) {
+        // Check if the length of the new username is at least 8 characters
+        if (officeNewPassword.length() >= 8) {
+            officeAccount.setPassword(officeNewPassword);
+        } else {
+            System.out.println();
+            System.out.println("Sorry, the password does not comply with requirements");
         }
     }
 }

@@ -28,7 +28,7 @@ public class lecturerMenu extends mainMenu {
             //Comparing data introduced by user in order to log in office account
             if (lecturerValidator(username, password)) {
                 //Lecturer lecturerTransactor instance has been created in order to work with his/her data and processes
-                Lecturer lecturerTransactor = lecturerInfo(username, password);
+                Lecturer lecturerTransactor = getLecturerInfo(username, password);
                 while (secondWhileTrigger == false) {
                     System.out.println();
                     System.out.println("Welcome " + lecturerTransactor.getName() + "\n Press 1 - to generate a Lecturers Report \n Press 2 - to change your username \n Press 3 - to change your password \n Press 4 - to log out");
@@ -120,10 +120,10 @@ public class lecturerMenu extends mainMenu {
         return false;
     }
 
-    //lecturerInfo Method to check if the lecturer account matches the lecturer account within the ArrayList to get the properties of the lecturer user.
+    //getLecturerInfo Method to check if the lecturer account matches the lecturer account within the ArrayList to get the properties of the lecturer user.
     //Method return the lecturer selected or null type
     //Param lecturer username, lecturer password
-    public Lecturer lecturerInfo(String username, String password) {
+    public Lecturer getLecturerInfo(String username, String password) {
         try {
             //Iteratin our ArrayList
             Iterator<Lecturer> itr = lecturers.iterator();
