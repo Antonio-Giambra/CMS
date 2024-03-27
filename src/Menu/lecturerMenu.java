@@ -61,28 +61,18 @@ public class lecturerMenu extends mainMenu {
                             System.out.println();
                             System.out.println("Please introduce your new username, it needs to be longer than 3 letters");
                             String lecturerNewUsername = sc.nextLine();
-                            if (lecturerNewUsername.length() >= 4) {
-                                lecturerTransactor.setUsername(lecturerNewUsername);
-                            } else {
-                                System.out.println();
-                                System.out.println("Sorry, the username does not comply with requirements");
-                            }
+                            changeUsername(lecturerTransactor, lecturerNewUsername);
                             break;
                         case "3":
                             //Changing lecturer password
                             System.out.println();
                             System.out.println("Please introduce your new password, it needs to be longer than 7 letters");
                             String lecturerNewPassword = sc.nextLine();
-                            if (lecturerNewPassword.length() >= 8) {
-                                lecturerTransactor.setPassword(lecturerNewPassword);
-                            } else {
-                                System.out.println();
-                                System.out.println("Sorry, the password does not comply with requirements");
-                            }
+                            changePassword(lecturerTransactor, lecturerNewPassword);
                             break;
                         case "4":
                             // Logging out
-                            System.out.println("You have been loged out");
+                            System.out.println("You have been logged out");
                             mainWhileTrigger = true;
                             secondWhileTrigger = true;
                             break;
@@ -97,7 +87,27 @@ public class lecturerMenu extends mainMenu {
             }
         }
     }
-
+    
+    //The method changeUsername takes the parameter lecturer and lecturerNewUsername, which represents the new username to be assigned to the lecturer account.
+    public void changeUsername(Lecturer lecturer, String lecturerNewUsername) {
+        // Check if the length of the new username is at least 4 characters
+        if (lecturerNewUsername.length() >= 4) {
+            lecturer.setUsername(lecturerNewUsername);
+        } else {
+            System.out.println();
+            System.out.println("Sorry, the username does not comply with requirements");
+        }
+    }
+    //The method changePassword takes the parameters lecturer and lecturerNewUsername, which represents the new password to be assigned to the lecturer account.
+    public void changePassword(Lecturer lecturer, String lecturerNewPassword) {
+        // Check if the length of the new username is at least 8 characters
+        if (lecturerNewPassword.length() >= 8) {
+            lecturer.setPassword(lecturerNewPassword);
+        } else {
+            System.out.println();
+            System.out.println("Sorry, the password does not comply with requirements");
+        }
+    }
     //lecturerValidator Method to check if lecturer account concur with lecturer account inside the ArrayList.
     //Method return True or False
     //Param lecturer username, lecturer password
@@ -114,6 +124,7 @@ public class lecturerMenu extends mainMenu {
                 }
 
             }
+            //Prints the stack trace if an error occurs
         } catch (Exception e) {
             e.printStackTrace();
         }

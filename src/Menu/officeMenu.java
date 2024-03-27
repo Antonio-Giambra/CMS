@@ -18,7 +18,7 @@ public class officeMenu extends mainMenu {
                 //Variable password to compare office password
                 String password = sc.nextLine();
                 //Comparing data introduced by user in order to log in office account
-                if (username.equals(officeAccount.getUsername()) && password.equals(officeAccount.getPassword())) {
+                if ((username.equals(officeAccount.getUsername()) && password.equals(officeAccount.getPassword())) && officeAccount !=null) {
                     while (secondWhileTrigger == false) {
                         System.out.println();
                         System.out.println("Welcome " + officeAccount.getName() + "\n Press 1 - to generate a Course Report \n Press 2 - to generate a Students Report \n Press 3 - to generate a Lecturers Report \n Press 4 - to change your username \n Press 5 - to change your password \n Press 6 - to log out");
@@ -110,7 +110,7 @@ public class officeMenu extends mainMenu {
                                 break;
                             case "6":
                                 // Logging out
-                                System.out.println("You have been loged out");
+                                System.out.println("You have been logged out");
                                 //Breaking the while loops
                                 mainWhileTrigger = true;
                                 secondWhileTrigger = true;
@@ -126,7 +126,7 @@ public class officeMenu extends mainMenu {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("Sorry, there is no Office Account on the system yet");
         }
     }
     //The method changeUsername takes a parameter officeNewUsername, which represents the new username to be assigned to the office account.

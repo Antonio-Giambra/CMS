@@ -1,9 +1,6 @@
 package Users;
 
-//Importing our dbConnector class which load all data from DB
-import dbConnector.dbConnector;
-
-public class Administrator extends dbConnector {
+public class Administrator {
 
     private String name;
     private String username;
